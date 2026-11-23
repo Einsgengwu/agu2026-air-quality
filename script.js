@@ -1,6 +1,6 @@
 // Optional resources: add the final public HTTPS URL(s), then redeploy.
 // Example: { label: 'Read the paper', url: 'https://doi.org/VERIFIED-DOI' }
-const resources = [];
+const resources = [{ label: 'Read the paper', url: 'https://doi.org/10.1021/acs.est.6c04494' }];
 const resourceNav = document.querySelector('#resources');
 for (const resource of resources) {
   const url = new URL(resource.url, location.href);
