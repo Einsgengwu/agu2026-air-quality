@@ -37,3 +37,11 @@ Open `index.html` in a browser, or serve this directory with `python -m http.ser
 ## QR printing
 
 Generate QR files only from the confirmed final HTTPS webpage URL. Use SVG for poster layout, or the high-resolution PNG at its original resolution. Preserve its four-module white quiet zone; use black on white, with no overlaid logo. Print at least 35 mm square and test a scan from the final poster proof. The QR links to the webpage, not the MP4, so video replacements do not change it.
+
+## Live site and print assets
+
+- Live HTTPS page: https://einsgengwu.github.io/agu2026-air-quality/
+- Repository: https://github.com/Einsgengwu/agu2026-air-quality
+- Print files: `qr/agu2026-qr.svg` and `qr/agu2026-qr.png` (2520 × 2520 pixels, 600 dpi metadata, Q error correction).
+- To regenerate locally: `python tools/generate_qr.py https://einsgengwu.github.io/agu2026-air-quality/`. This optional authoring utility uses ReportLab and Pillow; the website itself has no dependencies.
+- Poster details and presentation number were supplied by the presenter. Times are displayed in PST (UTC−08:00).
