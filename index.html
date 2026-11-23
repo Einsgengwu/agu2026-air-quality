@@ -7,8 +7,8 @@
   <meta name="description" content="A 68-second research introduction to China's future air quality: large-ensemble AI projections reveal three phases of PM2.5 and ozone mitigation.">
   <title>Three-phase transition in China's future air quality | AGU 2026</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="script.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#research-video">Skip to video</a>
@@ -23,13 +23,15 @@
           <span><sup>2</sup> Institute of Energy, Environmental and Economy, Tsinghua University, Beijing 100084, China</span>
           <span><sup>3</sup> Institute of Surface-Earth System Science, School of Earth Science System, Tianjin University, Tianjin 300072, China</span></p>
         <figure class="film">
-          <video id="research-video" width="1920" height="1080" controls playsinline preload="none" poster="assets/video-poster.jpg" aria-label="Research introduction: three-phase transition in China's future air quality" aria-describedby="viewing-tip">
-            <source src="assets/research-introduction.mp4?v=1" type="video/mp4">
-            Your browser cannot play this video. <a href="assets/research-introduction.mp4?v=1">Open the MP4 video</a>.
+          <div class="video-stage">
+          <video id="research-video" width="1920" height="1080" src="assets/research-introduction.mp4?v=2" controls playsinline preload="metadata" poster="assets/video-poster.jpg" aria-label="Research introduction: three-phase transition in China's future air quality" aria-describedby="viewing-tip">
+            Your browser cannot play this video. <a href="assets/research-introduction.mp4?v=2">Open the MP4 video</a>.
           </video>
-          <figcaption class="film-caption"><span><span class="film-label">Research introduction</span><span class="duration">1 min 08 sec · English</span></span><button id="fullscreen" type="button" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Fullscreen</button></figcaption>
+          <button id="play-video" type="button" aria-label="Play research introduction" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 4v16l13-8z"/></svg><span>Play video</span></button>
+          </div>
+          <figcaption class="film-caption"><span><span class="film-label">Research introduction</span><span class="duration">1 min 08 sec · English</span></span><div class="player-actions"><button id="fullscreen" type="button" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>Fullscreen</button><a class="direct-video" href="assets/research-introduction.mp4?v=2">Open video</a></div></figcaption>
         </figure>
-        <p id="viewing-tip" class="viewing-tip">Tap play to begin. For a wider view, turn your phone sideways or choose fullscreen.</p>
+        <p id="viewing-tip" class="viewing-tip">Tap Play video or use the player controls to begin. For a wider view, turn your phone sideways or choose fullscreen.</p>
         <p id="player-status" class="player-status" role="status" hidden></p>
       </section>
       <section class="research-note" aria-labelledby="about-title">
@@ -48,7 +50,7 @@
         </dl>
       </section>
     </main>
-    <footer><span>AGU 2026 · Research in focus</span><a href="assets/research-introduction.mp4?v=1">Open video</a></footer>
+    <footer><span>AGU 2026 · Research in focus</span><a href="assets/research-introduction.mp4?v=2">Open video</a></footer>
   </div>
 </body>
 </html>

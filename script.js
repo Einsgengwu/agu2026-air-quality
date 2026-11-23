@@ -13,6 +13,7 @@ for (const resource of resources) {
 resourceNav.hidden = !resourceNav.childElementCount;
 
 const video = document.querySelector('#research-video');
+const playButton = document.querySelector('#play-video');
 const fullscreen = document.querySelector('#fullscreen');
 const status = document.querySelector('#player-status');
 function showStatus(message) {
@@ -41,7 +42,27 @@ document.addEventListener('fullscreenchange', () => {
   if (document.fullscreenElement === video) preferLandscape();
   else if (screen.orientation?.unlock) screen.orientation.unlock();
 });
+// Call play directly in the click handler to retain Safari's user activation.
+playButton.hidden = false;
+playButton.addEventListener('click', () => {
+  if (!video.paused) {
+    video.pause();
+    return;
+  }
+  if (video.error) video.load();
+  showStatus('Loading video…');
+  video.play().catch(() => {
+    playButton.hidden = false;
+    showStatus('Playback could not start. Tap Play video to try again, or choose Open video.');
+  });
+});
+video.addEventListener('play', () => { playButton.hidden = true; });
+video.addEventListener('pause', () => { playButton.hidden = false; });
+video.addEventListener('playing', () => { status.hidden = true; });
+video.addEventListener('waiting', () => { showStatus('Buffering… Playback will continue when more video has loaded.'); });
+video.addEventListener('stalled', () => { showStatus('The video is taking longer to load. You can also choose Open video.'); });
 video.addEventListener('error', () => {
-  showStatus('The video could not load. Check your connection and try the Open video link below.');
+  playButton.hidden = false;
+  showStatus('The video could not load. Tap Play video to try again, or choose Open video.');
 });
 

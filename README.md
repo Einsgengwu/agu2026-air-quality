@@ -13,7 +13,7 @@ For this project, the repository is https://github.com/Einsgengwu/agu2026-air-qu
 ## Maintain
 
 - **Text:** edit `index.html`. Research wording is based on the supplied conference abstract; that source document is not distributed.
-- **Video:** replace `assets/research-introduction.mp4`. Change `?v=1` to `?v=2` in all three video URLs in `index.html` to refresh cached copies. Commit and push. Keep the page URL unchanged: the printed QR stays valid.
+- **Video:** replace `assets/research-introduction.mp4`. Change `?v=2` to `?v=3` in all video URLs in `index.html` to refresh cached copies. Commit and push. Keep the page URL unchanged: the printed QR stays valid.
 - **Cover:** replace `assets/video-poster.jpg` with a 16:9 image and update its filename if cache refresh is needed.
 - **Poster / paper:** add actual public HTTPS URLs to the `resources` array at the top of `script.js`, e.g. `{ label: 'View the full poster', url: 'https://your-real-domain/poster.pdf' }`. Empty resources stay hidden. No placeholder links are displayed.
 - Keep the GitHub account, repository name, and Pages path stable after printing. Renaming or disabling them can break the QR destination.
@@ -22,7 +22,7 @@ For this project, the repository is https://github.com/Einsgengwu/agu2026-air-qu
 
 The original MP4 is copied byte-for-byte: 1920 × 1080, 68.011 seconds, 13,447,346 bytes, H.264 video and AAC audio. Its `moov` metadata already precedes the media data for progressive playback. No re-encoding or remuxing was needed.
 
-The player uses `controls`, `playsinline`, and `preload="none"`; it does not autoplay or download the video deliberately before play. A small local cover loads first. The page uses relative asset URLs and works under a GitHub Pages project subpath.
+The player uses `controls`, `playsinline`, and `preload="metadata"`; it does not autoplay. Browsers may fetch metadata before play to initialize the player, including Safari. An explicit Play video button calls play directly within the user gesture, alongside the native controls. Loading and error messages provide feedback, and a nearby Open video link offers direct playback. A small local cover loads first. The page uses relative asset URLs and works under a GitHub Pages project subpath.
 
 Portrait screens show the complete 16:9 image without cropping. Landscape screens use a compact layout. Fullscreen requests a landscape orientation when the browser supports it; iOS uses native video fullscreen where available. Browsers and device rotation settings control whether orientation can be locked. A webpage cannot reliably force landscape at scan/open time. Native controls also work without JavaScript.
 
