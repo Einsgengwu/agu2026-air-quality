@@ -30,7 +30,6 @@ fullscreen.addEventListener('click', async () => {
   try {
     if (video.requestFullscreen) {
       await video.requestFullscreen();
-      await preferLandscape();
     } else if (video.webkitEnterFullscreen) {
       video.webkitEnterFullscreen();
     }
@@ -45,3 +44,4 @@ document.addEventListener('fullscreenchange', () => {
 video.addEventListener('error', () => {
   showStatus('The video could not load. Check your connection and try the Open video link below.');
 });
+
