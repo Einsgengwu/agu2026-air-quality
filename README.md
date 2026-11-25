@@ -1,6 +1,6 @@
 # AGU 2026 · Air quality research film
 
-A mobile-first, static research-video page for a conference poster. No build step, framework, analytics, remote fonts, or runtime dependencies.
+A mobile-first, static research-video page for a conference poster. No build step, framework, or remote fonts. The optional shared page-view counter is the only third-party script.
 
 ## Publish on GitHub Pages
 
@@ -45,3 +45,9 @@ Generate QR files only from the confirmed final HTTPS webpage URL. Use SVG for p
 - Print files: `qr/agu2026-qr.svg` and `qr/agu2026-qr.png` (2520 × 2520 pixels, 600 dpi metadata, Q error correction).
 - To regenerate locally: `python tools/generate_qr.py https://einsgengwu.github.io/agu2026-air-quality/`. This optional authoring utility uses ReportLab and Pillow; the website itself has no dependencies.
 - Poster details and presentation number were supplied by the presenter. Times are displayed in PST (UTC−08:00).
+
+## Page-view counter
+
+The footer shows this page's cumulative views using [Vercount](https://www.vercount.one/) and its public asynchronous script. Counts start being collected when this integration is enabled; no earlier history is reconstructed. Reloads and repeat visits may count again, and setup/verification visits are included. This measures page views, not unique attendees or video plays. Script blocking and service availability can affect counts; this is an approximate public indicator, not an audited attendance metric.
+
+The Vercount script makes a request with the page URL; like other network services it receives connection metadata including the visitor IP address. Its current script sets a host-level visitor cookie and caches counter data in local storage. If no count is available, the footer says Unavailable. Counter failures do not prevent video playback. To disable it, remove the events.vercount.one script and the view-counter span from index.html. Website content, poster files and video are not uploaded to the counter service.

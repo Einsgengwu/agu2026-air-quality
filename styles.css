@@ -12,3 +12,5 @@
 .player-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.film-caption{flex-wrap:wrap}#play-video{min-height:44px;padding:8px 12px;border:1px solid var(--ink);border-radius:4px;background:var(--ink);color:white;font-size:14px;cursor:pointer}.direct-video{font-size:14px;padding:12px 4px}.player-status{padding:12px;background:var(--wash);border-left:3px solid var(--accent)}
 
 .video-stage{position:relative;background:#081724}.video-stage #play-video{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;min-height:52px;padding:12px 18px;white-space:nowrap;font-weight:600;background:#102e3a;border-color:white;box-shadow:0 2px 18px #0006}.video-stage #play-video svg{width:22px;height:22px}.video-stage #play-video:hover{background:#174c59}
+
+footer{flex-wrap:wrap}.view-counter{display:inline-flex;align-items:center;gap:7px;font-size:12px}.view-counter svg{width:17px;height:17px;flex:none}.view-counter strong{font-weight:500;font-variant-numeric:tabular-nums}
